@@ -15,6 +15,15 @@ receptor = 124
 
 axis_scan = data.ascan_data[:, emissor, receptor]
 
+# Frequência de amostragem obtida dos metadados (em MHz)
+fs = data.inspection_params.sample_freq
+print(f"Frequência de amostragem: {fs} MHz")
+
+# Vetor de tempo em microssegundos (µs)
+tempo_us = np.arange(len(axis_scan)) / fs
+
+
+
 # A-scan
 plt.figure(figsize=(10, 4))
 
